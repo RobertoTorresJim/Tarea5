@@ -48,32 +48,26 @@ public class Tarea5 {
 	        return result;
 	}
 	
-	public ArrayList<Duplas> Executions(){
+	public static ArrayList<Duplas> Executions(){
 		int n = 4;
-		double average;
+		double average = 0.0;
 		ArrayList<Integer> randomArray = new ArrayList<Integer>();
 		ArrayList<Duplas> resultsDuplas = new ArrayList<Duplas>();
-		for(n = 4; n <= 10004; n = n + 20){
-			
+		for(n = 4; n <= 1004; n = n + 20){
+			System.out.println("Dupla: " + n + ", guardada.");
 			for(int i = 0; i < 50; i++){
 				randomArray = generateArray(n);
-				//resultsDuplas.add(new Duplas())
-				return null;
+				average = average + Quicksort(randomArray).ob;
 			}
+			average = average/50;
+			resultsDuplas.add(new Duplas(n,average));
+			average = 0.0;
+			
 		}
-		return null;
+		return resultsDuplas;
 	}
 	
-	public static void main(String[] args) {
-		ArrayList<Integer> randomArray = new ArrayList<Integer>();
-		randomArray = generateArray(10);
-		System.out.println(randomArray);
-		randomArray = Quicksort(randomArray).array;
-		System.out.println(randomArray);
-		System.out.println(count);
-
-	}
-
+	
 }
 
 
